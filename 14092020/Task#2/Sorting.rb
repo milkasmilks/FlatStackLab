@@ -13,7 +13,7 @@ class DataSorting
 			columns = array.delete_at(0)
 			array = @array.sort {|a,b| a[column_number] <=> b[column_number]}
 			
-			File.open("data_sorted_by_#{column_to_sort}", "w") do |file|
+			File.open("data_sorted_by_#{column_to_sort}.txt", "w") do |file|
 				file.puts columns.join(', ')
 				array.each {|el| file.puts el.join(', ')}
 			end
